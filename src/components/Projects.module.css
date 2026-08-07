@@ -1,0 +1,50 @@
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.item {
+  padding: 1.75rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.item:last-child {
+  border-bottom: 1px solid var(--border);
+}
+
+.index {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  margin-bottom: 0.65rem;
+}
+
+.title {
+  font-size: 1.35rem;
+  margin-bottom: 0.65rem;
+}
+
+.description {
+  color: var(--text-muted);
+  max-width: 42rem;
+}
+
+@media (min-width: 900px) {
+  .grid {
+    gap: 0;
+  }
+
+  .item {
+    display: grid;
+    grid-template-columns: 4rem 1fr 1.4fr;
+    gap: 1.5rem;
+    align-items: start;
+    padding-block: 2rem;
+  }
+
+  .index {
+    margin-bottom: 0;
+  }
+}

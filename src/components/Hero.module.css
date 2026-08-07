@@ -1,0 +1,132 @@
+.hero {
+  min-height: calc(100vh - var(--nav-height));
+  display: flex;
+  align-items: center;
+  padding-block: clamp(3rem, 8vw, 5rem) var(--section-pad);
+  position: relative;
+}
+
+.grid {
+  display: grid;
+  gap: 3rem;
+  align-items: center;
+}
+
+.copy {
+  max-width: 40rem;
+}
+
+.eyebrow {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.25rem;
+}
+
+.name {
+  font-size: clamp(2.8rem, 8vw, 4.6rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  margin-bottom: 1rem;
+  background: linear-gradient(120deg, #f8fafc 20%, var(--accent-bright) 140%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.role {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 1.1rem;
+}
+
+.tagline {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  max-width: 34rem;
+  margin-bottom: 2rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  align-items: center;
+}
+
+.secondary {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.85rem 1.15rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  color: var(--text) !important;
+  text-decoration: none !important;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.secondary:hover {
+  border-color: var(--accent);
+  color: var(--accent-bright) !important;
+}
+
+.panel {
+  position: relative;
+  display: none;
+}
+
+.panelGlow {
+  position: absolute;
+  inset: -20%;
+  background: radial-gradient(circle at 40% 40%, var(--accent-glow), transparent 55%);
+  filter: blur(28px);
+  opacity: 0.55;
+}
+
+.panelInner {
+  position: relative;
+  border: 1px solid var(--border-strong);
+  background: linear-gradient(160deg, rgba(28, 39, 64, 0.92), rgba(17, 24, 39, 0.85));
+  padding: 2rem 1.75rem;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.statLabel {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-top: 0.85rem;
+}
+
+.statLabel:first-child {
+  margin-top: 0;
+}
+
+.statValue {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+@media (min-width: 960px) {
+  .grid {
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 4rem;
+  }
+
+  .panel {
+    display: block;
+  }
+}

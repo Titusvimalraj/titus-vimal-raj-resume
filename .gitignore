@@ -1,0 +1,9 @@
+node_modules/
+.cache/
+public/
+.DS_Store
+*.log
+.env*
+.idea/
+.vscode/
+titus_vimal_raj_resume_2025_MAY.docx.pdf
