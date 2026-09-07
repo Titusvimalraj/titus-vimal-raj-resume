@@ -21,10 +21,10 @@ export function Contact() {
           <div className={styles.row}>
             <a href={`mailto:${contact.email}`}>{contact.email}</a>
             <a href={`tel:${contact.phone.replace(/-/g, "")}`}>{contact.phone}</a>
-            <a href={contact.linkedin} target="_blank" rel="noreferrer">
+            <a href={contact.linkedin} target="_blank" rel="noopener noreferrer">
               LinkedIn
             </a>
-            <a href={contact.github} target="_blank" rel="noreferrer">
+            <a href={contact.github} target="_blank" rel="noopener noreferrer">
               GitHub
             </a>
             <span>{contact.location}</span>

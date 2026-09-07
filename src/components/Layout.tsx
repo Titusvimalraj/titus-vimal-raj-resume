@@ -9,8 +9,11 @@ type Props = {
 export function Layout({ children }: Props) {
   return (
     <div className={styles.shell}>
+      <a className={styles.skipLink} href="#main-content">
+        Skip to main content
+      </a>
       <Nav />
-      <main>{children}</main>
+      <main id="main-content">{children}</main>
       <footer className={styles.footer}>
         <div className="container">
           <p>© {new Date().getFullYear()} Titus Vimal Raj · Built with Gatsby</p>

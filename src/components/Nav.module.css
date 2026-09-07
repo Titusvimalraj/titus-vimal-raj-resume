@@ -49,7 +49,7 @@
 }
 
 .link {
-  color: var(--text-muted) !important;
+  color: var(--text) !important;
   text-decoration: none !important;
   font-size: 0.88rem;
   font-weight: 500;

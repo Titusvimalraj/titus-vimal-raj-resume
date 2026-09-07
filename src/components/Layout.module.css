@@ -1,10 +1,29 @@
 .shell {
+  position: relative;
   min-height: 100vh;
+}
+
+.skipLink {
+  position: absolute;
+  left: 1rem;
+  top: -100%;
+  z-index: 100;
+  padding: 0.65rem 1rem;
+  background: var(--accent-bright);
+  color: #042f2e;
+  font-family: var(--font-display);
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: var(--radius);
+}
+
+.skipLink:focus {
+  top: 1rem;
 }
 
 .footer {
   border-top: 1px solid var(--border);
   padding: 1.5rem 0 2rem;
-  color: var(--text-dim);
+  color: var(--text-muted);
   font-size: 0.88rem;
 }

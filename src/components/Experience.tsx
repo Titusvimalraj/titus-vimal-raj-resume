@@ -16,24 +16,22 @@ export function Experience() {
         </Reveal>
         <ol className={styles.list}>
           {resume.experience.map((job, index) => (
-            <Reveal key={job.company} delay={index * 0.05}>
-              <li className={styles.item}>
-                <div className={styles.meta}>
-                  <h3 className={styles.title}>{job.title}</h3>
-                  <p className={styles.company}>{job.company}</p>
-                  <p className={styles.period}>{job.period}</p>
-                  <ul className={styles.stack}>
-                    {job.stack.map((skill) => (
-                      <li key={skill}>{skill}</li>
-                    ))}
-                  </ul>
-                </div>
-                <ul className={styles.bullets}>
-                  {job.bullets.map((bullet) => (
-                    <li key={bullet}>{bullet}</li>
+            <Reveal key={job.company} as="li" className={styles.item} delay={index * 0.05}>
+              <div className={styles.meta}>
+                <h3 className={styles.title}>{job.title}</h3>
+                <p className={styles.company}>{job.company}</p>
+                <p className={styles.period}>{job.period}</p>
+                <ul className={styles.stack} aria-label={`Technologies at ${job.company}`}>
+                  {job.stack.map((skill) => (
+                    <li key={skill}>{skill}</li>
                   ))}
                 </ul>
-              </li>
+              </div>
+              <ul className={styles.bullets}>
+                {job.bullets.map((bullet) => (
+                  <li key={bullet}>{bullet}</li>
+                ))}
+              </ul>
             </Reveal>
           ))}
         </ol>

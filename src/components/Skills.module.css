@@ -23,7 +23,7 @@
 
 .tags li {
   padding: 0.4rem 0.7rem;
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-strong);
   color: var(--text-muted);
   font-size: 0.88rem;
   font-family: var(--font-display);
@@ -55,7 +55,7 @@
 }
 
 .certList span {
-  color: var(--text-dim);
+  color: var(--text-muted);
   font-size: 0.92rem;
 }
 

@@ -39,7 +39,7 @@ export function Hero() {
           </motion.p>
           <motion.div className={styles.actions} variants={item}>
             <DownloadButton />
-            <a className={styles.secondary} href={resume.contact.linkedin} target="_blank" rel="noreferrer">
+            <a className={styles.secondary} href={resume.contact.linkedin} target="_blank" rel="noopener noreferrer">
               LinkedIn
             </a>
             <a className={styles.secondary} href="#contact">

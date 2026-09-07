@@ -99,7 +99,7 @@ button {
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--accent-bright);
   margin-bottom: 0.85rem;
 }
 

@@ -19,7 +19,7 @@ export function Skills() {
             <Reveal key={group} delay={index * 0.06}>
               <div className={styles.group}>
                 <h3 className={styles.groupTitle}>{group}</h3>
-                <ul className={styles.tags}>
+                <ul className={styles.tags} aria-label={`${group} skills`}>
                   {items.map((skill) => (
                     <li key={skill}>{skill}</li>
                   ))}

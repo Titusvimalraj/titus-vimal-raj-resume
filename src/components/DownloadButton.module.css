@@ -15,12 +15,12 @@
 }
 
 .primary {
-  background: var(--accent);
+  background: var(--accent-bright);
   color: #042f2e !important;
 }
 
 .primary:hover {
-  background: var(--accent-bright);
+  background: #99f6e4;
 }
 
 .ghost {

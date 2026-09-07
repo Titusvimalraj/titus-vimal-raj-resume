@@ -64,6 +64,7 @@ const skills = {
     "Snowflake",
   ],
   Testing: ["Playwright", "Puppeteer", "Selenium"],
+  Security: ["OWASP", "Certified to Use/Sell"],
 } as const;
 
 const aiSkills = new Set<string>(skills["AI / Agents"]);
@@ -74,6 +75,7 @@ const fullStack: string[] = [
   ...skills.Frontend,
   ...skills["Cloud / DevOps"],
   ...skills.Testing,
+  ...skills.Security,
 ];
 
 const fullStackWithoutAi = fullStack.filter((skill) => !aiSkills.has(skill));
@@ -139,6 +141,8 @@ export const resume = {
         "Delivered several products end-to-end with agents using the BMAD Method agile AI-driven development framework.",
         "Hands-on Agent Mode with GitHub Copilot, Cursor, and Claude Code; strong Prompt Engineering for multi-agent systems.",
         "E2E automation with Playwright and Puppeteer across product workflows.",
+        "Achieved Certified to Use/Sell certifications on Deloitte products delivered to clients.",
+        "Applied OWASP security best practices across application design, development, and deployment.",
         "Application Community lead; hosted Deloitte USI Chennai office-wide events (FWD & XCEED); negotiated venues and vendors for cultural office events.",
       ],
     },
