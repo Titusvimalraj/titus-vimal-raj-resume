@@ -22,6 +22,11 @@ export function Experience() {
                   <h3 className={styles.title}>{job.title}</h3>
                   <p className={styles.company}>{job.company}</p>
                   <p className={styles.period}>{job.period}</p>
+                  <ul className={styles.stack}>
+                    {job.stack.map((skill) => (
+                      <li key={skill}>{skill}</li>
+                    ))}
+                  </ul>
                 </div>
                 <ul className={styles.bullets}>
                   {job.bullets.map((bullet) => (

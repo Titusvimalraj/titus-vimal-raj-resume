@@ -1,3 +1,113 @@
+const skills = {
+  "AI / Agents": [
+    "GenAI",
+    "Multi-Agent Systems",
+    "LangGraph",
+    "LangChain",
+    "RAG",
+    "Prompt Engineering",
+    "Vertex AI",
+    "Embeddings",
+    "Vector Databases",
+    "Qdrant",
+    "MCP",
+    "FastAPI Agents",
+    "LLMs",
+    "GitHub Copilot",
+    "Cursor",
+    "Claude Code",
+    "BMAD Method",
+  ],
+  Backend: [
+    "Node.js",
+    "NestJS",
+    "Express",
+    "Python",
+    "Django",
+    "FastAPI",
+    "Java",
+    "SQL",
+    "MongoDB",
+    "Redis",
+    "GraphQL",
+    "Socket.io",
+    "JWT",
+    "pandas",
+    "scikit-learn",
+  ],
+  Frontend: [
+    "React",
+    "Angular",
+    "Next.js",
+    "TypeScript",
+    "JavaScript",
+    "Redux",
+    "RxJS",
+    "React Native",
+    "Ionic",
+    "Electron",
+  ],
+  "Cloud / DevOps": [
+    "AWS",
+    "Azure",
+    "Docker",
+    "Kubernetes",
+    "EKS",
+    "Helm",
+    "NGINX",
+    "CI/CD",
+    "GitHub Actions",
+    "Travis CI",
+    "Terraform",
+    "PM2",
+    "IIS",
+    "Snowflake",
+  ],
+  Testing: ["Playwright", "Puppeteer", "Selenium"],
+} as const;
+
+const aiSkills = new Set<string>(skills["AI / Agents"]);
+
+const fullStack: string[] = [
+  ...skills["AI / Agents"],
+  ...skills.Backend,
+  ...skills.Frontend,
+  ...skills["Cloud / DevOps"],
+  ...skills.Testing,
+];
+
+const fullStackWithoutAi = fullStack.filter((skill) => !aiSkills.has(skill));
+
+const ikometPreferred = [
+  "GraphQL",
+  "TypeScript",
+  "Node.js",
+  "Python",
+  "pandas",
+  "scikit-learn",
+  "Angular",
+  "React",
+  "Electron",
+  "Ionic",
+  "Terraform",
+  "PM2",
+  "AWS",
+  "IIS",
+  "Travis CI",
+] as const;
+
+function mergeStack(preferred: readonly string[], rest: readonly string[]): string[] {
+  const seen = new Set<string>();
+  const out: string[] = [];
+  for (const item of [...preferred, ...rest]) {
+    if (!seen.has(item)) {
+      seen.add(item);
+      out.push(item);
+    }
+  }
+  return out;
+}
+
 export const resume = {
   name: "Titus Vimal Raj",
   headline: "Senior Consultant | Lead Full Stack & AI Solutions Architect | 8+ Years",
@@ -19,13 +129,16 @@ export const resume = {
       company: "Deloitte Innovation Labs (Offices of the US)",
       title: "Senior Consultant | Lead Full Stack & AI Solutions Architect",
       period: "Dec 2021 – Present",
+      stack: fullStack,
       bullets: [
-        "Team lead for application design, deployment, and management across AI and full-stack deliveries.",
+        "Team lead for application design, deployment, and management across AI and full-stack deliveries (TypeScript, React, Node.js).",
         "Initiator and lead for AI adoption across the portfolio—strategy, enablement, and solution delivery.",
         "Designed Deep Researcher Agents with RAG (Qdrant) and an Analysis Agent powered by Qdrant MCP Server.",
-        "Refactored multi-agent chatbot workflows to FastAPI; Text-to-SQL on BigQuery under 30s using Vertex AI embeddings on table descriptions and a skills framework with few-shot SQL prompts.",
+        "Refactored multi-agent chatbot workflows (LangGraph) to FastAPI; Text-to-SQL on BigQuery under 30s using Vertex AI embeddings on table descriptions and a skills framework with few-shot SQL prompts.",
         "Built an enterprise-grade FastAPI report generator end-to-end—architecture through deployment—in 3 days.",
-        "Hands-on Agent Mode with GitHub Copilot and Cursor; strong Prompt Engineering for multi-agent systems.",
+        "Delivered several products end-to-end with agents using the BMAD Method agile AI-driven development framework.",
+        "Hands-on Agent Mode with GitHub Copilot, Cursor, and Claude Code; strong Prompt Engineering for multi-agent systems.",
+        "E2E automation with Playwright and Puppeteer across product workflows.",
         "Application Community lead; hosted Deloitte USI Chennai office-wide events (FWD & XCEED); negotiated venues and vendors for cultural office events.",
       ],
     },
@@ -33,6 +146,7 @@ export const resume = {
       company: "Kanini Software Solutions",
       title: "Associate IT Application Development",
       period: "Dec 2020 – Dec 2021",
+      stack: fullStackWithoutAi,
       bullets: [
         "Full-stack developer; established a unit testing framework for the API layer.",
         "Enabled hybrid migration from jQuery to React; trained peers on unit testing and ReactJS.",
@@ -43,17 +157,20 @@ export const resume = {
       company: "iKomet Technology Solutions Pvt Ltd",
       title: "MEAN Stack Developer",
       period: "Jan 2020 – Dec 2020",
+      stack: mergeStack(ikometPreferred, fullStackWithoutAi),
       bullets: [
-        "Architected frontend, backend, and infrastructure from scratch (Angular UI + Node.js API).",
-        "Built AWS CI/CD DevOps pipelines; worked on web data scraping; led the team to start the application.",
+        "Architected frontend, backend, and infrastructure from scratch for an editorial automation application—GraphQL APIs on Node.js/TypeScript with Angular, React, Electron, and Ionic clients.",
+        "Python with pandas and scikit-learn; Terraform, PM2, AWS, IIS, and Travis CI for infra and CI/CD; web data scraping; led the team to start the application.",
       ],
     },
     {
       company: "Accenture",
       title: "Associate Software Engineer",
       period: "Feb 2018 – Apr 2019",
+      stack: ["Angular", "React", "Python", "Node.js", "Selenium", "Java"],
       bullets: [
-        "Associate Software Engineer; ACE Award winner for innovation.",
+        "Built and maintained applications with Angular, React, Python, Node.js, and Java.",
+        "Automated browser E2E flows with Selenium; ACE Award winner for innovation.",
       ],
     },
   ],
@@ -74,54 +191,7 @@ export const resume = {
         "New enterprise-grade FastAPI report generator service—architecture, development, and deployment—delivered in 3 days.",
     },
   ],
-  skills: {
-    "AI / Agents": [
-      "GenAI",
-      "Multi-Agent Systems",
-      "RAG",
-      "Prompt Engineering",
-      "Vertex AI",
-      "Qdrant",
-      "FastAPI Agents",
-      "LLMs",
-    ],
-    Backend: [
-      "Node.js",
-      "NestJS",
-      "Express",
-      "Python",
-      "Django",
-      "FastAPI",
-      "SQL",
-      "MongoDB",
-      "Redis",
-      "GraphQL",
-      "Socket.io",
-      "JWT",
-    ],
-    Frontend: [
-      "React",
-      "Angular",
-      "Next.js",
-      "TypeScript",
-      "JavaScript",
-      "Redux",
-      "RxJS",
-      "React Native",
-      "Ionic",
-    ],
-    "Cloud / DevOps": [
-      "AWS",
-      "Azure",
-      "Docker",
-      "Kubernetes",
-      "EKS",
-      "Helm",
-      "NGINX",
-      "CI/CD",
-      "Snowflake",
-    ],
-  },
+  skills,
   leadership: [
     "Initiator and lead for AI adoption across the operations portfolio.",
     "Leader of the Application Community—engaging sessions and initiatives.",

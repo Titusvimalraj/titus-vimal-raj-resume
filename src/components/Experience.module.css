@@ -45,6 +45,24 @@
   font-family: var(--font-display);
 }
 
+.stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.55rem;
+  list-style: none;
+  padding: 0;
+}
+
+.stack li {
+  font-size: 0.72rem;
+  line-height: 1.2;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.18rem 0.5rem;
+}
+
 .bullets {
   display: grid;
   gap: 0.55rem;

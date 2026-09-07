@@ -25,8 +25,8 @@ const styles = StyleSheet.create({
   },
   header: {
     backgroundColor: colors.headerBg,
-    paddingTop: 26,
-    paddingBottom: 20,
+    paddingTop: 20,
+    paddingBottom: 16,
     paddingHorizontal: 34,
   },
   accentBar: {
@@ -63,10 +63,10 @@ const styles = StyleSheet.create({
   },
   body: {
     paddingHorizontal: 34,
-    paddingTop: 16,
+    paddingTop: 12,
   },
   section: {
-    marginBottom: 11,
+    marginBottom: 9,
   },
   sectionTitle: {
     fontFamily: "Helvetica-Bold",
@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
     color: colors.slate,
   },
   job: {
-    marginBottom: 8,
+    marginBottom: 6,
   },
   jobHeader: {
     flexDirection: "row",
@@ -106,11 +106,17 @@ const styles = StyleSheet.create({
   company: {
     fontSize: 8.8,
     color: colors.accent,
+    marginBottom: 2,
+  },
+  stack: {
+    fontSize: 6.8,
+    lineHeight: 1.28,
+    color: colors.muted,
     marginBottom: 3,
   },
   bullet: {
     flexDirection: "row",
-    marginBottom: 2.2,
+    marginBottom: 1.6,
   },
   bulletDot: {
     width: 9,
@@ -240,6 +246,7 @@ function ResumeDocument() {
                   <Text style={styles.jobPeriod}>{job.period}</Text>
                 </View>
                 <Text style={styles.company}>{job.company}</Text>
+                <Text style={styles.stack}>{job.stack.join(" · ")}</Text>
                 {job.bullets.map((bullet) => (
                   <View key={bullet} style={styles.bullet}>
                     <Text style={styles.bulletDot}>•</Text>
