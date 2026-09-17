@@ -1,5 +1,5 @@
 import React from "react";
-import { Document, Page, Text, View, Link, StyleSheet, renderToFile } from "@react-pdf/renderer";
+import { Document, Page, Text, View, Link, Image, StyleSheet, renderToFile } from "@react-pdf/renderer";
 import { mkdirSync, copyFileSync } from "fs";
 import path from "path";
 import { resume } from "../src/data/resume";
@@ -28,6 +28,21 @@ const styles = StyleSheet.create({
     paddingTop: 20,
     paddingBottom: 16,
     paddingHorizontal: 34,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    gap: 16,
+  },
+  headerContent: {
+    flex: 1,
+  },
+  profilePhoto: {
+    width: 72,
+    height: 72,
+    borderRadius: 36,
+    borderWidth: 2,
+    borderColor: colors.accentBright,
+    objectFit: "cover",
   },
   accentBar: {
     height: 4,
@@ -208,26 +223,30 @@ const styles = StyleSheet.create({
 
 function ResumeDocument() {
   const { contact } = resume;
+  const profileImagePath = path.join(process.cwd(), "static", "profile-picture.jpeg");
 
   return (
     <Document title={`${resume.name} Resume`} author={resume.name} subject={resume.headline}>
       <Page size="A4" style={styles.page}>
         <View style={styles.header}>
-          <Text style={styles.name}>{resume.name}</Text>
-          <Text style={styles.headline}>{resume.headline}</Text>
-          <View style={styles.contactRow}>
-            <Link src={`mailto:${contact.email}`} style={styles.contactLink}>
-              {contact.email}
-            </Link>
-            <Text style={styles.contactItem}>{contact.phone}</Text>
-            <Text style={styles.contactItem}>{contact.location}</Text>
-            <Link src={contact.linkedin} style={styles.contactLink}>
-              LinkedIn
-            </Link>
-            <Link src={contact.github} style={styles.contactLink}>
-              GitHub
-            </Link>
+          <View style={styles.headerContent}>
+            <Text style={styles.name}>{resume.name}</Text>
+            <Text style={styles.headline}>{resume.headline}</Text>
+            <View style={styles.contactRow}>
+              <Link src={`mailto:${contact.email}`} style={styles.contactLink}>
+                {contact.email}
+              </Link>
+              <Text style={styles.contactItem}>{contact.phone}</Text>
+              <Text style={styles.contactItem}>{contact.location}</Text>
+              <Link src={contact.linkedin} style={styles.contactLink}>
+                LinkedIn
+              </Link>
+              <Link src={contact.github} style={styles.contactLink}>
+                GitHub
+              </Link>
+            </View>
           </View>
+          <Image src={profileImagePath} style={styles.profilePhoto} />
         </View>
         <View style={styles.accentBar} />
 

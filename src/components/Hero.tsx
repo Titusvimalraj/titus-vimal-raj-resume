@@ -49,13 +49,19 @@ export function Hero() {
         </motion.div>
         <motion.div
           className={styles.panel}
-          aria-hidden="true"
           initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
         >
           <div className={styles.panelGlow} />
           <div className={styles.panelInner}>
+            <img
+              className={styles.photo}
+              src={resume.profileImage}
+              alt={resume.profileImageAlt}
+              width={280}
+              height={280}
+            />
             <span className={styles.statLabel}>Focus</span>
             <p className={styles.statValue}>Multi-Agent GenAI · FastAPI · Full Stack</p>
             <span className={styles.statLabel}>Impact</span>

@@ -128,7 +128,7 @@ export const resume = {
   },
   experience: [
     {
-      company: "Deloitte Innovation Labs (Offices of the US)",
+      company: "Deloitte Consulting India Pvt Ltd",
       title: "Senior Consultant | Lead Full Stack & AI Solutions Architect",
       period: "Dec 2021 – Present",
       stack: fullStack,
@@ -259,6 +259,8 @@ export const resume = {
     },
   ],
   pdfPath: "/resume.pdf",
+  profileImage: "/profile-picture.jpeg",
+  profileImageAlt: "Portrait of Titus Vimal Raj",
 } as const;
 
 export type Resume = typeof resume;
