@@ -27,7 +27,11 @@ export function Contact() {
             <a href={contact.github} target="_blank" rel="noopener noreferrer">
               GitHub
             </a>
+            <a href={contact.website} target="_blank" rel="noopener noreferrer">
+              {contact.websiteLabel}
+            </a>
             <span>{contact.location}</span>
+            <span>{resume.notice}</span>
           </div>
           <div className={styles.cta}>
             <DownloadButton />

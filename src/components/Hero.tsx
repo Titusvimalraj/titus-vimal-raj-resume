@@ -37,6 +37,9 @@ export function Hero() {
           <motion.p className={styles.tagline} variants={item}>
             {resume.tagline}
           </motion.p>
+          <motion.p className={styles.notice} variants={item}>
+            {resume.notice}
+          </motion.p>
           <motion.div className={styles.actions} variants={item}>
             <DownloadButton />
             <a className={styles.secondary} href={resume.contact.linkedin} target="_blank" rel="noopener noreferrer">

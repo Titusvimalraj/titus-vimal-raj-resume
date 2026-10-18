@@ -76,6 +76,11 @@ const styles = StyleSheet.create({
     textDecoration: "none",
     marginRight: 8,
   },
+  notice: {
+    fontSize: 8,
+    color: "#cbd5e1",
+    marginTop: 8,
+  },
   body: {
     paddingHorizontal: 34,
     paddingTop: 12,
@@ -244,7 +249,11 @@ function ResumeDocument() {
               <Link src={contact.github} style={styles.contactLink}>
                 GitHub
               </Link>
+              <Link src={contact.website} style={styles.contactLink}>
+                {contact.websiteLabel}
+              </Link>
             </View>
+            <Text style={styles.notice}>{resume.notice}</Text>
           </View>
           <Image src={profileImagePath} style={styles.profilePhoto} />
         </View>
@@ -334,7 +343,7 @@ function ResumeDocument() {
             <View style={styles.col}>
               <Text style={styles.sectionTitle}>Education</Text>
               {resume.education.map((ed) => (
-                <View key={ed.school}>
+                <View key={ed.school} style={{ marginBottom: 6 }}>
                   <Text style={[styles.eduText, { fontFamily: "Helvetica-Bold", color: colors.ink }]}>
                     {ed.school}
                   </Text>

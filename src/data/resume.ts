@@ -6,27 +6,27 @@ const skills = {
     "LangChain",
     "RAG",
     "Prompt Engineering",
+    "LLMs",
     "Vertex AI",
     "Embeddings",
     "Vector Databases",
     "Qdrant",
     "MCP",
     "FastAPI Agents",
-    "LLMs",
     "GitHub Copilot",
     "Cursor",
     "Claude Code",
     "BMAD Method",
   ],
   Backend: [
+    "Python",
+    "FastAPI",
+    "Django",
     "Node.js",
     "NestJS",
     "Express",
-    "Python",
-    "Django",
-    "FastAPI",
-    "Java",
     "SQL",
+    "BigQuery",
     "MongoDB",
     "Redis",
     "GraphQL",
@@ -63,60 +63,89 @@ const skills = {
     "IIS",
     "Snowflake",
   ],
-  Testing: ["Playwright", "Puppeteer", "Selenium"],
-  Security: ["OWASP", "Certified to Use/Sell"],
+  "Testing / Security": ["Playwright", "Puppeteer", "Selenium", "unit testing", "OWASP"],
 } as const;
 
-const aiSkills = new Set<string>(skills["AI / Agents"]);
-
-const fullStack: string[] = [
+const deloitteStack = [
   ...skills["AI / Agents"],
-  ...skills.Backend,
-  ...skills.Frontend,
-  ...skills["Cloud / DevOps"],
-  ...skills.Testing,
-  ...skills.Security,
-];
-
-const fullStackWithoutAi = fullStack.filter((skill) => !aiSkills.has(skill));
-
-const ikometPreferred = [
-  "GraphQL",
-  "TypeScript",
-  "Node.js",
   "Python",
+  "FastAPI",
+  "Django",
+  "Node.js",
+  "NestJS",
+  "Express",
+  "SQL",
+  "BigQuery",
+  "MongoDB",
+  "Redis",
+  "GraphQL",
+  "Socket.io",
+  "JWT",
   "pandas",
   "scikit-learn",
-  "Angular",
+  ...skills.Frontend,
+  ...skills["Cloud / DevOps"],
+  "Playwright",
+  "Puppeteer",
+  "Selenium",
+  "OWASP",
+];
+
+const kaniniStack = [
+  "Python",
+  "FastAPI",
+  "Django",
+  "Node.js",
+  "NestJS",
+  "Express",
+  "SQL",
+  "MongoDB",
+  "Redis",
+  "GraphQL",
+  "Socket.io",
+  "JWT",
+  "pandas",
+  "scikit-learn",
   "React",
-  "Electron",
+  "jQuery",
+  "Angular",
+  "Next.js",
+  "TypeScript",
+  "JavaScript",
+  "Redux",
+  "RxJS",
+  "React Native",
   "Ionic",
+  "Electron",
+  "AWS",
+  "Azure",
+  "Docker",
+  "Kubernetes",
+  "EKS",
+  "Helm",
+  "NGINX",
+  "CI/CD",
+  "GitHub Actions",
+  "Travis CI",
   "Terraform",
   "PM2",
-  "AWS",
   "IIS",
-  "Travis CI",
-] as const;
-
-function mergeStack(preferred: readonly string[], rest: readonly string[]): string[] {
-  const seen = new Set<string>();
-  const out: string[] = [];
-  for (const item of [...preferred, ...rest]) {
-    if (!seen.has(item)) {
-      seen.add(item);
-      out.push(item);
-    }
-  }
-  return out;
-}
+  "Snowflake",
+  "Playwright",
+  "Puppeteer",
+  "Selenium",
+  "unit testing",
+  "OWASP",
+];
 
 export const resume = {
   name: "Titus Vimal Raj",
-  headline: "Senior Consultant | Lead Full Stack & AI Solutions Architect | 8+ Years",
+  headline: "Lead Full Stack & AI Solutions Architect | Agentic GenAI | Senior Consultant, Deloitte | 8 Years",
   tagline:
-    "Building multi-agent GenAI systems and full-stack platforms that ship enterprise outcomes at speed.",
+    "Building production web platforms and agentic GenAI systems that ship enterprise outcomes.",
   summary:
-    "Senior Consultant and Lead Full Stack & AI Solutions Architect with nearly 8 years of experience. Initiator and lead for AI adoption across my portfolio—delivering multi-agent systems, FastAPI services, and GenAI solutions alongside MEAN/MERN full-stack craft. AWS & Microsoft certified. Based in Chennai, India.",
+    "Lead Full Stack & AI Solutions Architect with nearly 8 years of experience building production web platforms and GenAI systems. Initiator and lead for AI adoption across my Deloitte portfolio, delivering multi-agent systems (LangGraph, LangChain), RAG on Qdrant, MCP-based agents, Text-to-SQL on BigQuery with Vertex AI, and FastAPI services, alongside MEAN/MERN full-stack engineering (React, Angular, Node.js, TypeScript). Team lead for application design, deployment and management. AWS Certified AI Practitioner and AWS Certified Developer – Associate.",
+  notice: "Notice period: serving notice, last working day 2 Nov 2026",
   contact: {
     email: "titusvimalraj@gmail.com",
     phone: "+91-8610265950",
@@ -124,6 +153,8 @@ export const resume = {
     linkedinLabel: "linkedin.com/in/titus-vimal-raj",
     github: "https://github.com/Titusvimalraj",
     githubLabel: "github.com/Titusvimalraj",
+    website: "https://titusvimalraj.netlify.app",
+    websiteLabel: "titusvimalraj.netlify.app",
     location: "Chennai, India",
   },
   experience: [
@@ -131,29 +162,28 @@ export const resume = {
       company: "Deloitte Consulting India Pvt Ltd",
       title: "Senior Consultant | Lead Full Stack & AI Solutions Architect",
       period: "Dec 2021 – Present",
-      stack: fullStack,
+      stack: deloitteStack,
       bullets: [
-        "Team lead for application design, deployment, and management across AI and full-stack deliveries (TypeScript, React, Node.js).",
-        "Initiator and lead for AI adoption across the portfolio—strategy, enablement, and solution delivery.",
-        "Designed Deep Researcher Agents with RAG (Qdrant) and an Analysis Agent powered by Qdrant MCP Server.",
-        "Refactored multi-agent chatbot workflows (LangGraph) to FastAPI; Text-to-SQL on BigQuery under 30s using Vertex AI embeddings on table descriptions and a skills framework with few-shot SQL prompts.",
-        "Built an enterprise-grade FastAPI report generator end-to-end—architecture through deployment—in 3 days.",
-        "Delivered several products end-to-end with agents using the BMAD Method agile AI-driven development framework.",
-        "Hands-on Agent Mode with GitHub Copilot, Cursor, and Claude Code; strong Prompt Engineering for multi-agent systems.",
-        "E2E automation with Playwright and Puppeteer across product workflows.",
-        "Achieved Certified to Use/Sell certifications on Deloitte products delivered to clients.",
-        "Applied OWASP security best practices across application design, development, and deployment.",
-        "Application Community lead; hosted Deloitte USI Chennai office-wide events (FWD & XCEED); negotiated venues and vendors for cultural office events.",
+        "Team lead for application design, deployment and management across AI and full-stack deliveries (TypeScript, React, Node.js).",
+        "Initiator and lead for AI adoption across the portfolio: strategy, enablement and solution delivery.",
+        "Designed Deep Researcher Agents with RAG on Qdrant and an Analysis Agent powered by the Qdrant MCP Server.",
+        "Refactored multi-agent chatbot workflows (LangGraph) to FastAPI; built Text-to-SQL on BigQuery returning in under 30 seconds, using Vertex AI embeddings on table descriptions and a skills framework with few-shot SQL prompts.",
+        "Built an enterprise-grade FastAPI report generator end to end, from architecture to deployment, in 3 days.",
+        "Delivered several products end to end with agents using the BMAD Method, an agile AI-driven development framework.",
+        "Hands-on Agent Mode with GitHub Copilot, Cursor and Claude Code; strong prompt engineering for multi-agent systems.",
+        "End-to-end test automation with Playwright and Puppeteer across product workflows.",
+        "Applied OWASP security best practices across application design, development and deployment; achieved Certified to Use/Sell certifications on Deloitte products delivered to clients.",
+        "Application Community lead; hosted Deloitte USI Chennai office-wide events (FWD & XCEED).",
       ],
     },
     {
-      company: "Kanini Software Solutions",
+      company: "Kanini Software Solutions (Kanini payroll, contractor to Deloitte)",
       title: "Associate IT Application Development",
       period: "Dec 2020 – Dec 2021",
-      stack: fullStackWithoutAi,
+      stack: kaniniStack,
       bullets: [
         "Full-stack developer; established a unit testing framework for the API layer.",
-        "Enabled hybrid migration from jQuery to React; trained peers on unit testing and ReactJS.",
+        "Enabled a hybrid migration from jQuery to React; trained peers on unit testing and ReactJS.",
         "Awarded Star Performer and Learning Champion for certifications and delivery impact.",
       ],
     },
@@ -161,20 +191,37 @@ export const resume = {
       company: "iKomet Technology Solutions Pvt Ltd",
       title: "MEAN Stack Developer",
       period: "Jan 2020 – Dec 2020",
-      stack: mergeStack(ikometPreferred, fullStackWithoutAi),
+      stack: [
+        "GraphQL",
+        "Node.js",
+        "TypeScript",
+        "Angular",
+        "React",
+        "Electron",
+        "Ionic",
+        "Python",
+        "pandas",
+        "scikit-learn",
+        "Java",
+        "Terraform",
+        "PM2",
+        "AWS",
+        "IIS",
+        "Travis CI",
+      ],
       bullets: [
-        "Architected frontend, backend, and infrastructure from scratch for an editorial automation application—GraphQL APIs on Node.js/TypeScript with Angular, React, Electron, and Ionic clients.",
-        "Python with pandas and scikit-learn; Terraform, PM2, AWS, IIS, and Travis CI for infra and CI/CD; web data scraping; led the team to start the application.",
+        "Architected frontend, backend and infrastructure from scratch for an editorial automation application: GraphQL APIs on Node.js/TypeScript with Angular, React, Electron and Ionic clients.",
+        "Used Python with pandas and scikit-learn plus web data scraping; Terraform, PM2, AWS, IIS and Travis CI for infrastructure and CI/CD; led the team to start the application.",
       ],
     },
     {
       company: "Accenture",
       title: "Associate Software Engineer",
       period: "Feb 2018 – Apr 2019",
-      stack: ["Angular", "React", "Python", "Node.js", "Selenium", "Java"],
+      stack: ["Angular", "React", "Python", "Node.js", "Java", "Selenium"],
       bullets: [
-        "Built and maintained applications with Angular, React, Python, Node.js, and Java.",
-        "Automated browser E2E flows with Selenium; ACE Award winner for innovation.",
+        "Built and maintained applications with Angular, React, Python, Node.js and Java.",
+        "Automated browser end-to-end flows with Selenium; ACE Award winner for innovation.",
       ],
     },
   ],
@@ -182,40 +229,38 @@ export const resume = {
     {
       title: "Deep Researcher & Analysis Agents",
       description:
-        "Advanced Deep Researcher Agents with RAG on Qdrant Vector Database, plus an Analysis Agent via Qdrant MCP Server—fully architected and implemented.",
+        "Advanced Deep Researcher Agents with RAG on the Qdrant vector database, plus an Analysis Agent via the Qdrant MCP Server, fully architected and implemented.",
     },
     {
       title: "FastAPI Multi-Agent Text-to-SQL",
       description:
-        "Refactored chatbot agent workflows to FastAPI with BigQuery Text-to-SQL under 30 seconds, Vertex AI embeddings for table relevancy, and a dataset skills framework with few-shot SQL.",
+        "Chatbot agent workflows refactored to FastAPI with BigQuery Text-to-SQL under 30 seconds, Vertex AI embeddings for table relevance, and a dataset skills framework with few-shot SQL.",
     },
     {
       title: "Enterprise Report Generator",
       description:
-        "New enterprise-grade FastAPI report generator service—architecture, development, and deployment—delivered in 3 days.",
+        "New enterprise-grade FastAPI report generator service, covering architecture, development and deployment, delivered in 3 days.",
     },
   ],
   skills,
   leadership: [
-    "Initiator and lead for AI adoption across the operations portfolio.",
-    "Leader of the Application Community—engaging sessions and initiatives.",
-    "Hosted Deloitte USI Chennai office-wide events as location leader (FWD & XCEED).",
-    "Active contributor to cultural events—negotiated resorts, cafés, and gaming entertainment with venues and vendors.",
+    "Initiator and lead for AI adoption across the Deloitte portfolio.",
+    "Application Community lead; hosted Deloitte USI Chennai office-wide events (FWD & XCEED).",
   ],
   awards: [
     {
       title: "Deloitte Outstanding Performer Award",
-      year: "2025 & 2026",
+      year: "2025, 2026",
       detail: "Recognized twice for outstanding delivery performance.",
     },
     {
       title: "Deloitte Spot Award",
-      year: "2023, 2024 & 2025 (×2)",
+      year: "2023, 2024, 2025 ×2",
       detail: "Recognized for framework and delivery impact, including two Spot Awards in 2025.",
     },
     {
       title: "Deloitte Applause Award",
-      year: "2022, 2024 & 2026",
+      year: "2022, 2024, 2026",
       detail: "Cash award for architectural work.",
     },
     {
@@ -224,14 +269,14 @@ export const resume = {
       detail: "Kanini Software Solutions.",
     },
     {
+      title: "Arctic Code Vault Contributor",
+      year: "2020",
+      detail: "GitHub.",
+    },
+    {
       title: "Accenture ACE Award for Innovation",
       year: "2018",
       detail: "Innovation recognition.",
-    },
-    {
-      title: "Arctic Code Vault Contributor",
-      year: "2020",
-      detail: "GitHub Archive Program.",
     },
   ],
   certifications: [
@@ -253,7 +298,12 @@ export const resume = {
   ],
   education: [
     {
-      school: "Loyola-ICAM College of Engineering and Technology",
+      school: "DMI College of Engineering, Chennai",
+      degree: "Bachelor of Engineering (B.E.), Mechanical Engineering",
+      period: "2013 – 2017",
+    },
+    {
+      school: "Loyola-ICAM College of Engineering and Technology (LICET), Chennai",
       degree: "Bachelor of Engineering (B.E.), Mechanical Engineering",
       period: "2014 – 2017",
     },

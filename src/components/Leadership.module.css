@@ -72,6 +72,10 @@
   color: var(--text-muted);
 }
 
+.edu p + p {
+  margin-top: 0.9rem;
+}
+
 .edu strong {
   color: var(--text);
   font-family: var(--font-display);

@@ -4,7 +4,7 @@ const config: GatsbyConfig = {
   siteMetadata: {
     title: "Titus Vimal Raj | Lead Full Stack & AI Solutions Architect",
     description:
-      "Senior Consultant with nearly 8 years of experience in AI-driven solutions, multi-agent systems, and full-stack development.",
+      "Lead Full Stack and AI Solutions Architect with 8 years building production web platforms, multi-agent GenAI systems, and FastAPI services.",
     siteUrl: "https://titusvimalraj.netlify.app",
   },
   graphqlTypegen: true,
